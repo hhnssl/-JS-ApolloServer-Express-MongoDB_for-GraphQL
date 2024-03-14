@@ -15,12 +15,12 @@ https://dev.to/fredabod/a-simple-crud-app-with-graphql-apollo-server-mongodb-and
 
 # 구조 및 역할 설명
 `
-📦graphql-blog-app
-┣ 📂models
-┃ ┗ 📜Post.js                        DB에 넣기 전에 요청 데이터 구조가 postSchema와 일치하는지 검사하는 역할
-┣ 📜index.js                         typeDefs, resolvers로 아폴로서버 인스턴스 생성&몽고디비 연결
-┣ 📜schema.js [typeDefs]             타입 정의 for GraphQL
-┗ 📜resolvers.js [resolvers]         실제로 작업이 일어나는 곳. 명세서를 실물로 만든 것과 비슷한?
+📦graphql-blog-app  
+┣ 📂models  
+┃ ┗ 📜Post.js                        DB에 넣기 전에 요청 데이터 구조가 postSchema와 일치하는지 검사하는 역할  
+┣ 📜index.js                         typeDefs, resolvers로 아폴로서버 인스턴스 생성&몽고디비 연결  
+┣ 📜schema.js [typeDefs]             타입 정의 for GraphQL  
+┗ 📜resolvers.js [resolvers]         실제로 작업이 일어나는 곳. 명세서를 실물로 만든 것과 비슷한?  
 `
 
 # 실행 방법
