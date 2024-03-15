@@ -12,7 +12,7 @@ const postSchema = new mongoose.Schema({
   },
 });
 
-const Post = mongoose.model("Post", postSchema);
+export const Post = mongoose.model("Post", postSchema);
 
-module.exports = Post; // Node.js 환경에서 모듈을 내보내는 부분!  Post라는 몽구스 모델을 모듈로 내보내는 역할을 함
+// module.exports = Post; // Node.js 환경에서 모듈을 내보내는 부분!  Post라는 몽구스 모델을 모듈로 내보내는 역할을 함
 // require('./Post') <- 이런식으로 꺼내쓸 수 있게 함!!!

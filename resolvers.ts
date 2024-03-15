@@ -1,12 +1,12 @@
-//? 리졸버가 실제로 데베에 요청을 보내는 역할을 하는 것인가?
+import { Post } from "./models/Post";
 
 // Import the Post model. 동일한 디렉토리에 있는 파일이라고 가정한다.
 const { model } = require("mongoose");
-const Post = require("./models/Post");
+// const Post = require("./models/Post");
 
 // resolvers는 그래프큐엘 쿼리와 뮤테이션에 응답하는 방법을 정의한다.
 // schema.js 에 정의한 typeDefs에 상응하네..!
-const resolvers = {
+export const resolvers = {
   // # 쿼리 리졸버 객체는 read 작업(operation)을 처리한다.
   Query: {
     // 1. 모든 데이터를 가져오기 위한 리졸버
@@ -72,4 +72,4 @@ const resolvers = {
 };
 
 // 아폴로서버에서 사용하기 위한 리졸버 내보내기
-module.exports = resolvers;
+// module.exports = resolvers;

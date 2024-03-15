@@ -82,3 +82,58 @@ mutation deleteMutation{
   }
 }
 ```
+
+
+============================================
+
+# JS -> TS 마이그레이션
+1. TS 환경 설정
+  - `npm install typescript -D`
+  - `tsconfig.json` 파일 생성 및 설정
+2. ts 파일로 변환
+  2.1 컴파일 에러가 나는 것 위주로 수정
+    ```
+    /* 모듈 export 방식 변경  */
+    // schema.ts
+    module.exports = typeDefs; 
+    =>
+    export const typeDefs = gql`...`
+
+    // resolvers.ts
+    module.exports = resolvers;
+    =>   
+    export const resolvers ={...};
+    
+
+    /* import 방식 변경*/
+    //index.ts
+    const typeDefs = require("./schema");
+    const resolvers = require("./resolvers");
+    =>
+
+    import { typeDefs } from "./schema";
+    
+    ``` 
+  
+  2.2 실행해보기
+    `npm start`
+    * package.json에 스크립트 없어서 compile과 start 추가함(https://codesandbox.io/p/devbox/as4-alpha-example-vmpzkj?file=%2Fpackage.json%3A10%2C5-10%2C55&fontsize=14&hidenavigation=1&theme=dark)
+  => 에러 발생
+
+3. 2.2에 대한 원인 찾기
+  3.1 에러메시지
+  `Error: Cannot find module './models/Post'`
+  
+  3.2 해결
+  - Post 모듈 export/import 방식을 변경
+  - 오류가 나는 이유는 ts -> js로 변환되는 과정에서 폴더 구조나 실행 구조가 바뀌어서 모듈을 못찾는듯
+  
+===> 여기까지 했을 때 정상 작동 확인
+
+
+1. any 타입 선언
+1. any 타입을 더 적절한 타입으로 변경
+
+
+# 참고
+https://joshua1988.github.io/ts/etc/convert-js-to-ts.html

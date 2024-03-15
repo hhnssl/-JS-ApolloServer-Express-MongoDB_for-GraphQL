@@ -3,7 +3,7 @@
 const { gql } = require("apollo-server-express");
 
 // gql 템플릿 리터럴을 사용하여 그래프큐엘 스키마(정의서? 명세서?) 정의.
-const typeDefs = gql`
+export const typeDefs = gql`
   # 블로그 포스트를 표현하는 Post 타입
   type Post {
     id: ID!
@@ -25,4 +25,4 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = typeDefs; // require 함수로 꺼내쓸수있음
+// module.exports = typeDefs; // require 함수로 꺼내쓸수있음

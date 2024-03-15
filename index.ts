@@ -1,8 +1,10 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const mongoose = require("mongoose");
-const typeDefs = require("./schema");
-const resolvers = require("./resolvers");
+// const typeDefs = require("./schema");
+import { typeDefs } from "./schema";
+// const resolvers = require("./resolvers");
+import { resolvers } from "./resolvers";
 
 const app = express();
 
